@@ -34,6 +34,7 @@ const Navbar = () => {
               stroke="currentColor"
             >
               <path
+              
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
