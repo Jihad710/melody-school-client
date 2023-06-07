@@ -12,6 +12,7 @@ const SignUp = () => {
     createUser(data.email, data.password)
     .then(result => {
       const loggedUser = result.user;
+      
       console.log(loggedUser)
     })
   };
@@ -107,16 +108,16 @@ const SignUp = () => {
         />
         <label className="label">
           <span className="label-text font-medium">Photo URL</span>
-          {errors.photo && (
+          {errors.photoURL && (
             <span className="text-red-600">Photo URL is required</span>
-            
           )}
+          
         </label>
         <input
           className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
           type="url"
-          {...register("photo-url", { required: true })}
-          name="photo-url"
+          {...register("photoURL", { required: true })}
+          name="photoURL"
           placeholder="Photo URL"
         />
 

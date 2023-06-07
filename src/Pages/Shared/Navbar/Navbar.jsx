@@ -23,6 +23,7 @@ const handleLogOut = () => {
         <Link to='/'>Home</Link>
       </li>
       <li><Link to='/about'>About</Link></li>
+      <li><Link to='/secret'>Secret</Link></li>
       
       
 
@@ -69,6 +70,8 @@ const handleLogOut = () => {
       </div>
       <div className="navbar-end">
       {
+        
+        
   user ? (
     <>
       <button onClick={handleLogOut} className="btn btn-outline btn-warning">Logout</button>

@@ -1,21 +1,28 @@
-import { FaGoogle } from 'react-icons/fa';
+
 import logo from "../../assets/Banner/photo-1593697972646-2f348871bd56.avif";
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 
 function Login() {
   
 const {signIn} = useContext(AuthContext)
+const navigate = useNavigate();
+const location = useLocation();
+
+
+
+
+const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     signIn(email, password)
     .then(result => {
       const user = result.user;
@@ -27,6 +34,7 @@ const {signIn} = useContext(AuthContext)
         showConfirmButton: false,
         timer: 1500
       });
+       navigate(from, { replace: true });
     })
 }
 
@@ -83,13 +91,7 @@ const {signIn} = useContext(AuthContext)
             Or
           </p>
         </div>
-        <div className="text-center md:text-left">
-          <label className="mr-5">Sign in with</label>
-          <button className="btn btn-circle btn-outline">
-                    <FaGoogle></FaGoogle>
-                </button>
-          
-        </div>
+        <SocialLogin></SocialLogin>
 
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
           Dont have an account?{" "}
