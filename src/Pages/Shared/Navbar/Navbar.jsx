@@ -34,7 +34,7 @@ const Navbar = () => {
               stroke="currentColor"
             >
               <path
-              
+
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
@@ -59,7 +59,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-      <button className="btn btn-outline btn-warning">Login</button>
+      <Link to='/login'><button className="btn btn-outline btn-warning">Login</button></Link>
       </div>
     </div>
   );
