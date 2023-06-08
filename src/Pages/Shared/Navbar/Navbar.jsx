@@ -24,6 +24,7 @@ const handleLogOut = () => {
       </li>
       <li><Link to='/about'>About</Link></li>
       <li><Link to='/secret'>Secret</Link></li>
+      <li><Link to='/instructors'>Instructors</Link></li>
       
       
 
@@ -68,21 +69,27 @@ const handleLogOut = () => {
          {navItems}
         </ul>
       </div>
-      <div className="navbar-end">
-      {
-        
-        
-  user ? (
-    <>
-      <button onClick={handleLogOut} className="btn btn-outline btn-warning">Logout</button>
-    </>
-  ) : (
-    <>
-      <li><Link className='btn btn-outline btn-warning' to='/login'>Login</Link></li>
-    </>
-  )
-}
-      </div>
+     <div className="navbar-end">
+  {
+    user ? (
+      <>
+        <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+          {
+            user?.photoURL ? <img style={{ height: 50, width: 50 }} src={user.photoURL} className="rounded-full mx-5" /> : ""
+          }
+        </div>
+        <button onClick={handleLogOut} className="btn btn-outline btn-warning">Logout</button>
+      </>
+    ) : (
+      <>
+        <li>
+          <Link className='btn btn-outline btn-warning' to='/login'>Login</Link>
+        </li>
+      </>
+    )
+  }
+</div>
+
     </div>
   );
 };
