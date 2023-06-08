@@ -1,42 +1,43 @@
-
-import logo from "../../assets/Banner/photo-1593697972646-2f348871bd56.avif";
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import SocialLogin from "../SocialLogin/SocialLogin";
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { HiEye, HiEyeOff } from 'react-icons/hi';
 
+import logo from '../../assets/Banner/photo-1593697972646-2f348871bd56.avif';
 
 function Login() {
-  
-const {signIn} = useContext(AuthContext)
-const navigate = useNavigate();
-const location = useLocation();
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prevVisible) => !prevVisible);
+  };
 
-
-const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || '/';
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    signIn(email, password)
-    .then(result => {
+    signIn(email, password).then((result) => {
       const user = result.user;
-      console.log(user)
+      console.log(user);
       Swal.fire({
         position: 'top',
         icon: 'success',
-        title: 'User Login Successfull',
+        title: 'User Login Successful',
         showConfirmButton: false,
-        timer: 1500
+        timer: 1500,
       });
-       navigate(from, { replace: true });
-    })
-}
+      navigate(from, { replace: true });
+    });
+  };
 
   return (
     <div className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
@@ -45,8 +46,8 @@ const from = location.state?.from?.pathname || "/";
       </div>
 
       <form onSubmit={handleLogin} className="md:w-1/3 max-w-sm">
-      <label className="label">
-        <span className="label-text font-medium">Email</span>
+        <label className="label">
+          <span className="label-text font-medium">Email</span>
         </label>
         <input
           className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
@@ -55,16 +56,23 @@ const from = location.state?.from?.pathname || "/";
           placeholder="Email Address"
         />
         <label className="label">
-        <span className="label-text font-medium">Password</span>
+          <span className="label-text font-medium">Password</span>
         </label>
-        <input
-          className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded "
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        
-        
+        <div className="relative">
+          <input
+            className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
+            type={passwordVisible ? 'text' : 'password'}
+            name="password"
+            placeholder="Password"
+          />
+          <span
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            onClick={togglePasswordVisibility}
+          >
+            {passwordVisible ? <HiEyeOff /> : <HiEye />}
+          </span>
+        </div>
+
         <div className="mt-4 flex justify-between font-semibold text-sm">
           <label className="flex text-slate-500 hover:text-slate-600 cursor-pointer">
             <input className="mr-1" type="checkbox" />
@@ -94,8 +102,13 @@ const from = location.state?.from?.pathname || "/";
         <SocialLogin></SocialLogin>
 
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
-          Dont have an account?{" "}
-          <Link className="text-orange-400 hover:underline hover:underline-offset-4" to='/signup'> Register</Link>
+          Dont have an account?{' '}
+          <Link
+            className="text-orange-400 hover:underline hover:underline-offset-4"
+            to="/signup"
+          >
+            Register
+          </Link>
         </div>
       </form>
     </div>
