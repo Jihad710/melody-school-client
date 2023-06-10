@@ -1,11 +1,17 @@
 import Banner from "../Banner/Banner";
+import DayClasses from "../DayClasses/DayClasses";
+import Description from "../Description/Description";
+
 
 
 const Home = () => {
     return (
         <div>
-            <h2>This is home</h2>
+           
             <Banner></Banner>
+            <Description></Description>
+            <DayClasses></DayClasses>
+            
         </div>
     );
 };

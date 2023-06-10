@@ -23,7 +23,7 @@ const handleLogOut = () => {
         <Link to='/'>Home</Link>
       </li>
       <li><Link to='/about'>About</Link></li>
-      <li><Link to='/secret'>Secret</Link></li>
+      <li><Link to='/dashboard'>Dashboard</Link></li>
       <li><Link to='/instructors'>Instructors</Link></li>
       
       
@@ -60,10 +60,16 @@ const handleLogOut = () => {
               {navItems}
             </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+      <div >
+      <Link to="/" className="btn btn-ghost normal-case text-xl">
           <img src={logo} alt="" />
         </Link>
+        <h2 className='ml-5 font-medium'>Music Course Agency</h2>
       </div>
+        
+       
+      </div>
+      
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
          {navItems}
