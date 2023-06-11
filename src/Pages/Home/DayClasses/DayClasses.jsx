@@ -7,7 +7,7 @@ import drum from "../../../assets/Banner/Drum.png";
 const DayClasses = () => {
   return (
     <section>
-      <div className="text-4xl mt-10 font-semibold mb-5 flex justify-between items-center">
+      <div className="text-4xl  font-semibold mb-16 mt-20 flex justify-between items-center">
         <h2>
           Our class is where your passions
           <br />
@@ -33,11 +33,11 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-            <Link className="hover:text-green-400" to="/">
-              <button className="btn btn-outline btn-warning font-light">
-                More Details
-              </button>
-            </Link>
+           <Link className="hover:text-green-400" to="/">
+                  <button className="btn btn-outline mt-8  hover:bg-black font-medium">
+                    More Details
+                  </button>
+                </Link>
           </div>
         </div>
         <div className="card-body hover:bg-yellow-200">
@@ -53,11 +53,11 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-            <Link className="hover:text-green-400" to="/">
-              <button className="btn btn-outline btn-warning font-light">
-                More Details
-              </button>
-            </Link>
+           <Link className="hover:text-green-400" to="/">
+                  <button className="btn btn-outline  mt-8 hover:bg-black font-medium">
+                    More Details
+                  </button>
+                </Link>
           </div>
         </div>
         <div className="card-body hover:bg-yellow-200">
@@ -73,11 +73,11 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-            <Link className="hover:text-green-400" to="/">
-              <button className="btn btn-outline btn-warning font-light">
-                More Details
-              </button>
-            </Link>
+           <Link className="hover:text-green-400" to="/">
+                  <button className="btn btn-outline  mt-8 hover:bg-black font-medium">
+                    More Details
+                  </button>
+                </Link>
           </div>
         </div>
         <div className="card-body hover:bg-yellow-200">
@@ -93,11 +93,11 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-            <Link className="hover:text-green-400" to="/">
-              <button className="btn btn-outline btn-warning font-light">
-                More Details
-              </button>
-            </Link>
+           <Link className="hover:text-green-400" to="/">
+                  <button className="btn btn-outline mt-8  hover:bg-black font-medium">
+                    More Details
+                  </button>
+                </Link>
           </div>
         </div>
         <div className="card-body hover:bg-yellow-200">
@@ -113,11 +113,11 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-            <Link className="hover:text-green-400" to="/">
-              <button className="btn btn-outline btn-warning font-light">
-                More Details
-              </button>
-            </Link>
+           <Link className="hover:text-green-400" to="/">
+                  <button className="btn btn-outline mt-8  hover:bg-black font-medium">
+                    More Details
+                  </button>
+                </Link>
           </div>
         </div>
         <div className="card-body hover:bg-yellow-200">
@@ -133,11 +133,11 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-            <Link className="hover:text-green-400" to="/">
-              <button className="btn btn-outline btn-warning font-light">
-                More Details
-              </button>
-            </Link>
+           <Link className="hover:text-green-400" to="/">
+                  <button className="btn btn-outline mt-8  hover:bg-black font-medium">
+                    More Details
+                  </button>
+                </Link>
           </div>
         </div>
       </div>

@@ -62,7 +62,7 @@ const Information = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center md:flex-row md:gap-4 bg-yellow-200 ">
+    <div className="flex flex-col items-center justify-center md:flex-row md:gap-4 mb-20 -mt-8 bg-yellow-200 ">
     <div id="count-section" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="p-8">
         <div className="text-center md:text-left">
@@ -70,7 +70,7 @@ const Information = () => {
           <div className="text-4xl font-bold text-black">
             <CountUp start={initialCount} end={activeStudents} duration={5} />
           </div>
-          <p className="text-gray-500 mt-4 font-extralight">Students Currently Active</p>
+          <p className="text-gray-500 mt-4 font-light">Students Currently Active</p>
         </div>
       </div>
 
@@ -80,7 +80,7 @@ const Information = () => {
           <div className="text-4xl font-bold text-black">
             <CountUp start={initialCount} end={activeTeachers} duration={5} />
           </div>
-          <p className="text-gray-500 mt-4 font-extralight">Teachers Currently Active</p>
+          <p className="text-gray-500 mt-4 font-light">Teachers Currently Active</p>
         </div>
       </div>
 
@@ -90,7 +90,7 @@ const Information = () => {
           <div className="text-4xl font-bold text-black">
             <CountUp start={initialCount} end={testimonials} duration={5} />
           </div>
-          <p className="text-gray-500 mt-4 font-extralight">Testimonials Received</p>
+          <p className="text-gray-500 mt-4 font-light">Testimonials Received</p>
         </div>
       </div>
 
@@ -100,7 +100,7 @@ const Information = () => {
           <div className="text-4xl font-bold text-black">
             <CountUp start={initialCount} end={totalVideos} duration={5} />
           </div>
-          <p className="text-gray-500 mt-4 font-extralight">Videos Available</p>
+          <p className="text-gray-500 mt-4 font-light">Videos Available</p>
         </div>
       </div>
     </div>
