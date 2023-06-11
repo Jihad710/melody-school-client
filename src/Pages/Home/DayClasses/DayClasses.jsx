@@ -1,18 +1,148 @@
-
+import { Link } from "react-router-dom";
+import vocal from "../../../assets/Banner/Vocal.png";
+import sexophone from "../../../assets/Banner/Saxophone.png";
+import guitar from "../../../assets/Banner/guitar.png";
+import drum from "../../../assets/Banner/Drum.png";
 
 const DayClasses = () => {
-    return (
-        
-        
-        <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="flex items-center mb-4">
-          <img src="/path/to/logo.png" alt="Logo" className="w-8 h-8 mr-2" />
-          <h2 className="text-xl font-bold">Title</h2>
-        </div>
-        <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque nibh quis dolor sagittis, eget rhoncus urna scelerisque.</p>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Button</button>
+  return (
+    <section>
+      <div className="text-4xl mt-10 font-semibold mb-5 flex justify-between items-center">
+        <h2>
+          Our class is where your passions
+          <br />
+          come into play every day.
+        </h2>
+       <Link to='/instructors'> <button className="relative border-2 text-2xl font-light border-gray-400 bg-transparent py-2.5 px-5 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100">
+  Register Now 
+</button></Link>
+
       </div>
-    );
+
+      <div className="card bg-base-100 grid grid-cols-1 md:grid-cols-3">
+        <div className="card-body hover:bg-yellow-200">
+          <h2 className="card-title">
+            <img className="w-8 h-11 " src={vocal} alt="" />
+            Vocal Practice
+          </h2>
+          <p>12k Students</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cum
+            beatae repudiandae repellendus voluptate non iste sint tempora vitae
+            accusamus?
+          </p>
+          <div className="card-actions mr-3">
+            <Link className="hover:text-green-400" to="/">
+              <button className="btn btn-outline btn-warning font-light">
+                More Details
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="card-body hover:bg-yellow-200">
+          <h2 className="card-title">
+            <img className="w-8 h-11 " src={sexophone} alt="" />
+            Sexophone Practice
+          </h2>
+          <p>14k Students</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cum
+            beatae repudiandae repellendus voluptate non iste sint tempora vitae
+            accusamus?
+          </p>
+          <div className="card-actions mr-3">
+            <Link className="hover:text-green-400" to="/">
+              <button className="btn btn-outline btn-warning font-light">
+                More Details
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="card-body hover:bg-yellow-200">
+          <h2 className="card-title">
+            <img className="w-8 h-11 " src={guitar} alt="" />
+            Guitar Practice
+          </h2>
+          <p>12k Students</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cum
+            beatae repudiandae repellendus voluptate non iste sint tempora vitae
+            accusamus?
+          </p>
+          <div className="card-actions mr-3">
+            <Link className="hover:text-green-400" to="/">
+              <button className="btn btn-outline btn-warning font-light">
+                More Details
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="card-body hover:bg-yellow-200">
+          <h2 className="card-title">
+            <img className="w-8 h-11 " src={drum} alt="" />
+            Drum Practice
+          </h2>
+          <p>12k Students</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cum
+            beatae repudiandae repellendus voluptate non iste sint tempora vitae
+            accusamus?
+          </p>
+          <div className="card-actions mr-3">
+            <Link className="hover:text-green-400" to="/">
+              <button className="btn btn-outline btn-warning font-light">
+                More Details
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="card-body hover:bg-yellow-200">
+          <h2 className="card-title">
+            <img className="w-8 h-11 " src={drum} alt="" />
+            Drum Practice
+          </h2>
+          <p>12k Students</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cum
+            beatae repudiandae repellendus voluptate non iste sint tempora vitae
+            accusamus?
+          </p>
+          <div className="card-actions mr-3">
+            <Link className="hover:text-green-400" to="/">
+              <button className="btn btn-outline btn-warning font-light">
+                More Details
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="card-body hover:bg-yellow-200">
+          <h2 className="card-title">
+            <img className="w-8 h-11 " src={drum} alt="" />
+            Drum Practice
+          </h2>
+          <p>12k Students</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cum
+            beatae repudiandae repellendus voluptate non iste sint tempora vitae
+            accusamus?
+          </p>
+          <div className="card-actions mr-3">
+            <Link className="hover:text-green-400" to="/">
+              <button className="btn btn-outline btn-warning font-light">
+                More Details
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default DayClasses;

@@ -3,13 +3,13 @@ import { HiMenuAlt3, HiOutlineUserGroup } from "react-icons/hi";
 import { MdLibraryBooks, MdOutlineManageAccounts, MdPayment } from "react-icons/md";
 import { RiSettings4Line } from "react-icons/ri";
 
-import { AiFillBook, AiOutlineBook } from "react-icons/ai";
+import { AiFillBook, AiFillHome, AiOutlineBook } from "react-icons/ai";
 import {  FiFolder } from "react-icons/fi";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import Footer from "../Pages/Shared/Footer/Footer";
 
-const Home = () => {
+const Dashboard = () => {
   const [open, setOpen] = useState(true);
   const navigate = useNavigate();
 
@@ -24,6 +24,7 @@ const Home = () => {
 
   const removeHeaderFooter = location.pathname.includes("dashboard");
   const menus = [
+    { name: "Home", link: "/", icon: AiFillHome },
     { name: "Payment", link: "/", icon: MdPayment },
     { name: "My Selected Classes", link: "selectedclasses", icon: AiOutlineBook },
     { name: "My Enrolled Classes", link: "enrolledclasses", icon: MdLibraryBooks },
@@ -91,4 +92,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Dashboard;
