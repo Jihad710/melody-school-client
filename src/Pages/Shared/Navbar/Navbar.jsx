@@ -5,8 +5,13 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 
 
+
 const Navbar = () => {
 const {user,logOut} = useContext(AuthContext);
+
+
+
+
 
 const handleLogOut = () => {
   logOut()
@@ -23,17 +28,23 @@ const handleLogOut = () => {
         <Link to='/'>Home</Link>
       </li>
       <li><Link to='/about'>About</Link></li>
-      <li><Link to='/dashboard'>Dashboard</Link></li>
+      
       <li><Link to='/instructors'>Instructors</Link></li>
+      <li><Link to='/classes'>Classes</Link></li>
+      
+      <li><Link to="/dashboard/home">Dashboard </Link></li>
+        
+     
       
       
 
       
      
     </>
+   
   );
   return (
-    <div className="navbar  z-10 bg-base-100 h-28 mb-4">
+    <div className="navbar  z-10 bg-base-100 h-28 mb-4 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -1,95 +1,108 @@
-import React, { useState } from "react";
-import { HiMenuAlt3, HiOutlineUserGroup } from "react-icons/hi";
-import { MdLibraryBooks, MdOutlineManageAccounts, MdPayment } from "react-icons/md";
+import { NavLink, Outlet } from 'react-router-dom';
+
+import { FcAddDatabase  , FcServices } from "react-icons/fc";
+import { MdLibraryBooks, MdOutlineManageAccounts } from "react-icons/md";
+import { FaHome } from 'react-icons/fa';
+import {  AiOutlineBook } from "react-icons/ai";
 import { RiSettings4Line } from "react-icons/ri";
-
-import { AiFillBook, AiFillHome, AiOutlineBook } from "react-icons/ai";
-import {  FiFolder } from "react-icons/fi";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import Navbar from "../Pages/Shared/Navbar/Navbar";
-import Footer from "../Pages/Shared/Footer/Footer";
-
-const Dashboard = () => {
-  const [open, setOpen] = useState(true);
-  const navigate = useNavigate();
+import Navbar from '../Pages/Shared/Navbar/Navbar';
 
 
-  const isAuthenticated = true; 
 
- 
-  if (!isAuthenticated) {
-    navigate("/login"); 
-    return null; 
-  }
 
-  const removeHeaderFooter = location.pathname.includes("dashboard");
-  const menus = [
-    { name: "Home", link: "/", icon: AiFillHome },
-    { name: "Payment", link: "/", icon: MdPayment },
-    { name: "My Selected Classes", link: "selectedclasses", icon: AiOutlineBook },
-    { name: "My Enrolled Classes", link: "enrolledclasses", icon: MdLibraryBooks },
-    { name: "Add Class", link: "/", icon: AiFillBook, margin: true },
-    { name: "My Classes", link: "/", icon: FiFolder },
-    { name: "Total Enrolled Student", link: "/", icon: HiOutlineUserGroup },
-    { name: "Manage Classes", link: "/", icon: MdOutlineManageAccounts, margin: true },
-    { name: "Manage User", link: "/", icon: RiSettings4Line },
-  ];
+const DashBoard = () => {
 
-  return (
-    <section className="flex gap-6">
-      <div
-        className={`bg-[#0e0e0e] min-h-screen ${
-          open ? "w-72" : "w-16"
-        } duration-500 text-gray-100 px-4`}
-      >
-        <div className="py-3 flex justify-end">
-          <HiMenuAlt3
-            size={26}
-            className="cursor-pointer"
-            onClick={() => setOpen(!open)}
-          />
+return (
+    <>
+    <Navbar/>
+      <div className="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content flex flex-col justify-center overflow-auto">
+          <label htmlFor="my-drawer-2" className="lg:hidden text-center btn w-1/3 mx-auto">
+          
+          </label>
+          <Outlet />
         </div>
-        <div className="mt-4 flex flex-col gap-4 relative">
-          {menus?.map((menu, i) => (
-            <Link
-              to={menu?.link}
-              key={i}
-              className={` ${
-                menu?.margin && "mt-5"
-              } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md`}
-            >
-              <div>{React.createElement(menu?.icon, { size: "20" })}</div>
-              <h2
-                style={{
-                  transitionDelay: `${i + 3}00ms`,
-                }}
-                className={`whitespace-pre duration-500 ${
-                  !open && "opacity-0 translate-x-28 overflow-hidden"
-                }`}
-              >
-                {menu?.name}
-              </h2>
-              <h2
-                className={`${
-                  open && "hidden"
-                } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-              >
-                {menu?.name}
-              </h2>
-            </Link>
-          ))}
+
+        <div className="drawer-side">
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          <ul className="menu p-4 w-80 h-full bg-black text-base-100">
+          
+              <>
+                <li>
+                  <NavLink to="/dashboard/home" activeClassName="text-neutral">
+                    <FaHome className="text-3xl" />
+                    Admin Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageUsers" activeClassName="text-neutral">
+                    <RiSettings4Line className="text-3xl" />
+                    Manage User
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageClasses" activeClassName="text-neutral">
+                    <MdOutlineManageAccounts className="text-3xl" />
+                    Manage Classes
+                  </NavLink>
+                </li>
+                
+              
+              </>
+              
+           
+              
+              <>
+            <div className="divider"></div>
+                <li>
+                  <NavLink to="/dashboard/home" activeClassName="text-neutral">
+                    <FaHome className="text-3xl" />
+                    Instructor Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addaclass" activeClassName="text-neutral">
+                    <FcAddDatabase className="text-3xl" />
+                    Add a Class
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/myClasses" activeClassName="text-neutral">
+                    <FcServices className="text-3xl" />
+                    My Classes
+                  </NavLink>
+                </li>
+              </>
+   
+              
+              <>
+              <div className="divider"></div>
+                <li>
+                  <NavLink to="/dashboard/home" activeClassName="text-neutral">
+                    <FaHome className="text-3xl" />
+                    User Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/selectedClasses" activeClassName="text-neutral">
+                    <AiOutlineBook className="text-3xl" />
+                    My Selected Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/enrolledClasses" activeClassName="text-neutral">
+                    <MdLibraryBooks className="text-3xl" />
+                    My Enrolled Classes
+                  </NavLink>
+                </li>
+              </>
+      
+          </ul>
         </div>
       </div>
-      <div className="m-3 text-xl text-gray-900 font-semibold">
-        MELODY SCHOOL
-      </div>
-      <div>
-        {removeHeaderFooter || <Navbar></Navbar>}
-        <Outlet></Outlet>
-        {removeHeaderFooter || <Footer></Footer>}
-      </div>
-    </section>
+    </>
   );
 };
 
-export default Dashboard;
+export default DashBoard;

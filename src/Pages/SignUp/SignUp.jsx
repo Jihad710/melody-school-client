@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const SignUp = () => {
   const {register, handleSubmit,formState: { errors },} = useForm();
@@ -16,6 +17,7 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
+    axios.post('http://localhost:5000/users',{name: data.name, email:data.email, photo:data.photoURL })
     .then(result => {
       const loggedUser = result.user;
       
