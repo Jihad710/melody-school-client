@@ -65,7 +65,7 @@ const ManageUsers = () => {
       </Helmet>
 
       <div>
-        <p className=" font-semibold badge badge-lg bg-warning">Total Users: {users.length}</p>
+        <p className=" font-semibold text-center mb-10 bg-gray- ">Total Users: {users.length}</p>
       </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
@@ -96,20 +96,20 @@ const ManageUsers = () => {
                   </div>
                 </td>
                 <td>
-                <div className=" text-success font-bold">{user.role}</div> 
+                <div className=" text-orange-400 font-bold">{user.role}</div> 
                 </td>
                 <th>
                   <div className="flex gap-2">
                     <button
                       onClick={() => handleMakeInstructor(user._id)}
-                      className="btn btn-xs"
+                      className="btn btn-xs bg-lime-400  hover:bg-red-500 hover:text-white"
                       disabled={user.role === 'instructor'}
                     >
                       Instructor
                     </button>
                     <button
                       onClick={() => handleMakeAdmin(user._id)}
-                      className="btn btn-xs"
+                      className="btn btn-xs bg-yellow-400  hover:bg-red-500 hover:text-white"
                       disabled={user.role === 'admin' }
                     >
                       Admin
