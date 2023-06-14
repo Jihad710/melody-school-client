@@ -7,17 +7,18 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Instructor from "../Pages/Instructor/Instructor";
 import DashBoard from "../Layout/DashBoard";
 import MySelectedClasses from "../Pages/DashBoard/MySelectedClasses/MySelectedClasses";
-import MyEnrolledClasses from "../Pages/DashBoard/MyEnrolledClasses/MyEnrolledClasses";
+
 import Classes from "../Pages/Classes/Classes";
 import AddAClass from "../Pages/DashBoard/AddAClass/AddAClass";
 import MyClasses from "../Pages/DashBoard/MyClasses/MyClasses";
 import InstructorRoutes from "./InstructorRoutes";
 import ManageUsers from "../Pages/DashBoard/ManageUser/ManageUser";
 
-import StudentRoute from "./StudentRoute";
 import UserHome from "../Pages/DashBoard/UserHome/UserHome";
 import PrivateRoute from "./PrivateRoute";
 import ManageClasses from "../Pages/DashBoard/ManageClasses/ManageClasses";
+import EnrolledClasses from "../Pages/DashBoard/EnrolledClasses/EnrolledClasses";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -64,13 +65,13 @@ export const router = createBrowserRouter([
                 path: 'home',
                 element:<UserHome></UserHome>
               },
-            {
-                path:'userhome',
-                element:<StudentRoute><UserHome></UserHome></StudentRoute>
-              },
+            // {
+            //     path:'userhome',
+            //     element:<StudentRoute><UserHome></UserHome></StudentRoute>
+            //   },
             {
                 path:'manageusers',
-                element:<ManageUsers></ManageUsers>
+                element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
               },
             {
                 path:'selectedclasses',
@@ -78,11 +79,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:'enrolledclasses',
-                element:<MyEnrolledClasses></MyEnrolledClasses>
+                element:<EnrolledClasses></EnrolledClasses>
             },
             {
                 path:'addaclass',
-                element:<AddAClass></AddAClass>
+                element:<InstructorRoutes><AddAClass></AddAClass></InstructorRoutes>
             },
             {
                 path:'myclasses',
@@ -90,7 +91,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'manageClasses',
-                element:<ManageClasses></ManageClasses>
+                element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
             }
         ]
     }

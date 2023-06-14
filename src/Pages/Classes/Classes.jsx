@@ -61,7 +61,7 @@ const Classes = () => {
           Swal.fire({
             icon: 'error',
             title: 'Class already selected',
-            // text: 'Please Login!',
+          
           
           })
         }
@@ -97,7 +97,7 @@ const Classes = () => {
                
                 <button disabled={item.seats === 0}
                   onClick={() => handleSelectClass(item)} className="btn btn-outline mt-8  hover:bg-black font-medium">
-                    Select Class
+                    Add Class
                   </button>
               </div>
             </div>

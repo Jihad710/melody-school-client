@@ -16,12 +16,12 @@ const MyClasses = () => {
   console.log(classes);
   const [axiosSecure] = useAxiosSecure();
   const [updateItem, setUpdateItem] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State variable for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
-        setIsModalOpen(false); // Close the modal on "Esc" key press
+        setIsModalOpen(false); 
       }
     };
 
@@ -33,7 +33,7 @@ const MyClasses = () => {
   }, []);
   const handleUpdate = (item) => {
     setUpdateItem(item);
-    setIsModalOpen(true); // Open the modal
+    setIsModalOpen(true); 
   };
 
   const onSubmitUpdate = (data) => {
@@ -55,7 +55,7 @@ const MyClasses = () => {
             timer: 1500,
           });
 
-          setIsModalOpen(false); // Close the modal after successful update
+          setIsModalOpen(false);
         }
       });
   };
@@ -159,7 +159,9 @@ const MyClasses = () => {
               </div>
             </div>
             <div className=" text-left mx-3 my-3">
-              <button type="submit" className="btn btn-secondary md:w-1/4 w-1/2" >Update</button>
+              <div className='text-center'>
+              <button type="submit" className="btn btn-outline bg-black text-white md:w-1/4 w-1/2" >Update Class</button>
+              </div>
             </div>
           </form>
         </dialog>

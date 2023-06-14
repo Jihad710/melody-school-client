@@ -1,8 +1,10 @@
+
+import { Helmet } from 'react-helmet-async';
+import useAuth from '../../../components/hooks/useAuth';
 import { useForm } from 'react-hook-form';
-import { Helmet } from 'react-helmet';
-import Swal from 'sweetalert2';
-import useAuth from '../../../components/hooks/UseAuth';
+
 import useAxiosSecure from '../../../components/hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 
 const AddAClass = () => {
@@ -12,12 +14,11 @@ const AddAClass = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        // console.log(data)
-        const { image, price, seats, name, instructor } = data
+   
+        const { image, price, seats, name } = data
         const newClass = {
             name,
             image,
-            instructor,
             price: parseFloat(price),
             seats: parseFloat(seats),
 
@@ -49,22 +50,15 @@ const AddAClass = () => {
             <Helmet>
                 <title>Melody | Add a Class</title>
             </Helmet>
+           
             <div className=" w-2/3 mx-auto">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className=" grid grid-cols-2 gap-3 mx-3">
                         <div className="form-control w-full ">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Class name</span>
+                                <span className="label-text font-semibold text-lg">Class name</span>
                             </label>
-                            <input type="text" placeholder="Class name" className="input input-bordered w-full "  {...register("name", { required: true, maxLength: 80 })} />
-                            {errors.name && <span className='text-red-600'>This field is required</span>}
-
-                        </div>
-                        <div className="form-control w-full ">
-                            <label className="label">
-                                <span className="label-text font-semibold text-lg">Instructor name</span>
-                            </label>
-                            <input type="text" placeholder="Instructor name" className="input input-bordered w-full "  {...register("instructor", { required: true, maxLength: 80 })} />
+                            <input type="text" placeholder="First name" className="input input-bordered w-full "  {...register("name", { required: true, maxLength: 80 })} />
                             {errors.name && <span className='text-red-600'>This field is required</span>}
 
                         </div>
@@ -95,7 +89,7 @@ const AddAClass = () => {
                         </div>
                     </div>
                     <div className=" text-center my-3">
-                        <input type="submit" className="btn btn-secondary md:w-1/4 w-1/2" value="Add Class" />
+                        <input type="submit" className="btn btn-outline btn-warning" value="Add Class" />
 
 
                     </div>

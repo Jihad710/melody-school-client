@@ -160,7 +160,7 @@ const ManageClasses = () => {
                   <td>
                     <div className="join join-vertical lg:join-horizontal">
                       {item.status === "pending" && (
-                        <button className="mx-0 btn join-item btn-xs btn-secondary">
+                        <button className="mx-0 btn join-item btn-xs border-orange-400 text-gray-950">
                           pending
                         </button>
                       )}

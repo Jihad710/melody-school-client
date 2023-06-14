@@ -6,12 +6,18 @@ import { FaHome } from 'react-icons/fa';
 import {  AiOutlineBook } from "react-icons/ai";
 import { RiSettings4Line } from "react-icons/ri";
 import Navbar from '../Pages/Shared/Navbar/Navbar';
+import useAdmin from '../components/hooks/useAdmin';
+import useInstructor from '../components/hooks/useInstructor';
 
 
 
 
 const DashBoard = () => {
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
+  
+  console.log('isAdmin',isAdmin,'isInstructor',isInstructor)
 return (
     <>
     <Navbar/>
@@ -27,7 +33,7 @@ return (
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bg-black text-base-100">
-          
+          {isAdmin ? (
               <>
                 <li>
                   <NavLink to="/dashboard/home" activeClassName="text-neutral">
@@ -48,10 +54,12 @@ return (
                   </NavLink>
                 </li>
                 
-              
+               
               </>
+               ) :
+                isInstructor ? (
               
-           
+              
               
               <>
             <div className="divider"></div>
@@ -74,7 +82,7 @@ return (
                   </NavLink>
                 </li>
               </>
-   
+    ) : (
               
               <>
               <div className="divider"></div>
@@ -97,7 +105,7 @@ return (
                   </NavLink>
                 </li>
               </>
-      
+       )}
           </ul>
         </div>
       </div>

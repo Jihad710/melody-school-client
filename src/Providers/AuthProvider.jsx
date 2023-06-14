@@ -39,22 +39,7 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-        //     if(currentUser){
-        //         axios.post('https://tasnia-yoga-and-meditation-school-server.vercel.app/jwt', {email : currentUser.email})
-        //         .then(data=>{
-        //             // set when user = 1
-        //             localStorage.setItem('access-token' , data.data.token)
-
-        //     })
-
-        // }
-        // else{
-        //     // remove when user = 0
-        //     localStorage.removeItem("access-token")
-        // }
-
-
-        setloading(false)
+             setloading(false)
 })
 return ()=>{
     setloading(true)

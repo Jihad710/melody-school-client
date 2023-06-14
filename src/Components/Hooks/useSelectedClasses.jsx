@@ -1,6 +1,8 @@
-import useAxiosSecure from './useAxiosSecure';
+
 import { useQuery } from '@tanstack/react-query';
-import useAuth from './UseAuth';
+
+import useAxiosSecure from './useAxiosSecure';
+import useAuth from './useAuth';
 
 const useSelectedClasses = () => {
     const { user } = useAuth()

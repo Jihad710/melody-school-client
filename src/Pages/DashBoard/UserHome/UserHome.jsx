@@ -1,31 +1,30 @@
+
 import { Helmet } from 'react-helmet-async';
-import useAuth from '../../../components/hooks/UseAuth';
-
+import useAuth from '../../../components/hooks/useAuth';
+import useAxiosSecure from '../../../components/hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { get } from 'react-hook-form';
-
-
-
 
 const UserHome = () => {
    
     const {user} = useAuth();
-    
-    const { data: userm = {} } = useQuery({
-        queryKey: ['userm', user?.email],
-        queryFn: async () => {
-          const res = await get(`/users/${user?.email}`);
-          return res.data;
-        },
-      });
+    const [axiosSecure] = useAxiosSecure();
+    const {data: userm = [], } = useQuery({
+        queryKey: ['userm' , user?.email],
+        
 
+        queryFn: async()=>{
+            const res = await axiosSecure.get(`/user/${user?.email}`)
+            return res.data;
+        }
+    })
+    console.log(userm)
 
     return (
         <div>
             <Helmet>
-                <title>Melody | Dashboard Home</title>
+                <title>Tasnia YMS | Dashboard Home</title>
             </Helmet>
-         
+
             <div className="hero  ">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={user?.photoURL} className="max-w-sm rounded-lg shadow-2xl" />
