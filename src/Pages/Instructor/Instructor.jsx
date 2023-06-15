@@ -1,8 +1,8 @@
 
-import { FcExpand,  } from "react-icons/fc";
+
 
 import axios from 'axios';
-import { Card, CardActionArea, CardContent, CardMedia, Collapse, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import { Fade} from 'react-awesome-reveal';
 import { Helmet } from 'react-helmet';
 import useAuth from '../../components/hooks/useAuth';
@@ -12,9 +12,9 @@ import { useCallback } from 'react';
 import { useQuery } from "@tanstack/react-query";
 
 const InstructorsMentor = () => {
-  const [classesInfo, setClassesInfo] = useState([]);
+  const [ setClassesInfo] = useState([]);
   const [isButtonCollapseOpen, setIsButtonCollapseOpen] = useState([]);
-  const [isCollapseLoading, setIsCollapseLoading] = useState([]);
+  const [setIsCollapseLoading] = useState([]);
 
   const InstructorDetails = async (email) => {
     setIsCollapseLoading(true);
@@ -29,7 +29,7 @@ const InstructorsMentor = () => {
   const { data: instructorsMentor = [],  } = useQuery({
     queryKey: ['instructors', user?.email],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/instructors`)
+      const res = await axios.get(`https://melody-school-server-jihad710.vercel.app/instructors`)
       return res.data;
     }
   });
@@ -87,33 +87,11 @@ const InstructorsMentor = () => {
                       }}
                       type="button"
                       className='btn btn-link btn-info flex items-center px-0'>
-                      Classes <FcExpand></FcExpand>
+                   
                     </button>
                   </div>
                 </Typography>
-                <Typography className='overflow-auto' variant="body2" color="text.secondary">
-                  <Collapse isOpened={isButtonCollapseOpen[index]}>
-                    <div id={index} className="blob">
-                      {/* collapse content */}
-                      {isCollapseLoading ? (
-                        <p>Loading...</p>
-                      ) : (
-                        <>
-                          {classesInfo.instructorEmail === instructor.email && (
-                            <>
-                              <span className='text-semibold'>Total class:</span> {classesInfo.count}
-                              <br />
-                              {classesInfo.count > 0 && <span className='font-semibold'>classes:</span>}
-                              {classesInfo.className.map((name, i) => (
-                                <p key={i}>{name}</p>
-                              ))}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </div>
-                  </Collapse>
-                </Typography>
+                
               </CardContent>
               </Fade>
             </CardActionArea>

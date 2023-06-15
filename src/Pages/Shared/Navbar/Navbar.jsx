@@ -1,7 +1,15 @@
-import { useContext } from 'react';
+
 import logo from '../../../assets/logo-default-131x43.png'
-import { Link } from "react-router-dom";
+
+import { FaMoon, FaSun } from 'react-icons/fa';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../../ThemeProvider/ThemeProvider';
+
+
+
+
 
 
 
@@ -9,7 +17,17 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 const Navbar = () => {
 const {user,logOut} = useContext(AuthContext);
 
+const { theme, toggleTheme } = useContext(ThemeContext);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const handleToggleTheme = (e) => {
+    e.preventDefault();
+    toggleTheme();
+    setIsDarkMode(!isDarkMode);
+
+    const htmlElement = document.getElementById('html-theme');
+    htmlElement.setAttribute('data-theme', theme)
+  };
 
 
 
@@ -34,6 +52,11 @@ const handleLogOut = () => {
       
       <li><Link to="/dashboard/home">Dashboard </Link></li>
       <li><Link to='/blog'>Blog</Link></li>
+      <li><Link>
+        <button type="button" className='' onClick={handleToggleTheme}>
+          {isDarkMode ? <FaSun /> : <FaMoon />}
+        </button>
+      </Link></li>
         
      
       

@@ -5,8 +5,9 @@ import { Fade} from 'react-awesome-reveal';
 import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../components/hooks/useAxiosSecure';
-import useAuth from '../../components/hooks/UseAuth';
+
 import { Helmet } from 'react-helmet';
+import useAuth from '../../components/hooks/useAuth';
 
 const Classes = () => {
 

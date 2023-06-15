@@ -9,6 +9,8 @@ import AuthProvider from './Providers/AuthProvider';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { QueryClient } from 'react-query';
 import { HelmetProvider } from 'react-helmet-async';
+import { ThemeProvider } from './ThemeProvider/ThemeProvider';
+
 
 
 
@@ -21,10 +23,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
    <AuthProvider>
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
-      
+      <ThemeProvider>
     <div className='max-w-screen-xl mx-auto'>
     <RouterProvider router={router} />
     </div>
+    </ThemeProvider>
     
     </HelmetProvider>
     </QueryClientProvider>

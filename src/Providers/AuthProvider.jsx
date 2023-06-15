@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
-import {GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import {GoogleAuthProvider, createUserWithEmailAndPassword,updateProfile, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { app } from "../firebase/firebase.config";
-// import axios from "axios";
+
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app)
@@ -19,7 +19,12 @@ const AuthProvider = ({children}) => {
         setloading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
-
+     // add nes user's name and photo
+     const updateUserProfile = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        })
+    }
     
 
     const signIn = (email,password) => {
@@ -54,6 +59,7 @@ return ()=>{
         user,
         loading,
         createUser,
+        updateUserProfile,
         signIn,
         googleSignIn,
         logOut
