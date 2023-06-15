@@ -18,7 +18,7 @@ const InstructorsMentor = () => {
 
   const InstructorDetails = async (email) => {
     setIsCollapseLoading(true);
-    const res = await axios.get(`https://localhost:5000/classes/${email}`);
+    const res = await axios.get(`http://localhost:5000/classes/${email}`);
     console.log(res.data);
     setClassesInfo(res.data);
     setIsCollapseLoading(false);
@@ -29,7 +29,7 @@ const InstructorsMentor = () => {
   const { data: instructorsMentor = [],  } = useQuery({
     queryKey: ['instructors', user?.email],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/instructor`)
+      const res = await axios.get(`http://localhost:5000/instructors`)
       return res.data;
     }
   });
@@ -65,7 +65,7 @@ const InstructorsMentor = () => {
               className='h-60'
                 component="img"
                 height="140"
-                image={instructor.image}
+                image={instructor.photo}
                 alt="instructor"
               />
              

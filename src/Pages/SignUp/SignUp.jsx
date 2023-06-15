@@ -19,6 +19,9 @@ const SignUp = () => {
     createUser(data.email, data.password)
     axios.post('http://localhost:5000/users',{name: data.name, email:data.email, photo:data.photoURL })
     .then(result => {
+     
+
+
       const loggedUser = result.user;
       
       console.log(loggedUser)

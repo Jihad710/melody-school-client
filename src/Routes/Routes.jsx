@@ -19,6 +19,8 @@ import PrivateRoute from "./PrivateRoute";
 import ManageClasses from "../Pages/DashBoard/ManageClasses/ManageClasses";
 import EnrolledClasses from "../Pages/DashBoard/EnrolledClasses/EnrolledClasses";
 import AdminRoute from "./AdminRoute";
+import Payment from "../Pages/Payment/Payment";
+import CheckOutForm from "../Pages/CheckOutForm/CheckOutForm";
 
 
 
@@ -92,6 +94,14 @@ export const router = createBrowserRouter([
             {
                 path:'manageClasses',
                 element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+            },
+            {
+                path:'payment/:id',
+                element:<Payment></Payment>
+            },
+            {
+                path:'CheckOutForm',
+                element:<CheckOutForm></CheckOutForm>
             }
         ]
     }
