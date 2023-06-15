@@ -80,14 +80,14 @@ const PopularClasses = () => {
                       className=""
                       color="info"
                       size="medium"
-                      variant="contained"  // Added variant prop with "contained"
+                      variant="contained"  
                       sx={{
                         
-                        borderWidth: '2px',  // Added button border
-                        borderColor: 'warning.main',  // Set button border color
+                        borderWidth: '2px', 
+                        borderColor: 'warning.main',  
                         '&:hover': {
-                            // Remove background on hover
-                          borderColor: 'warning.dark',  // Change border color on hover
+                            
+                          borderColor: 'warning.dark',  
                         }
                       }}
                     >

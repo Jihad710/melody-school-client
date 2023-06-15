@@ -35,7 +35,7 @@ const ManagePlan = () => {
                 <p className="text-left">Certificate Guarantee</p>
               </div>
               <div className="card-actions flex justify-center mt-10">
-              <Link className="hover:text-green-400" to="/">
+              <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline   hover:bg-black font-medium">
                     Join Now
                   </button>
@@ -70,7 +70,7 @@ const ManagePlan = () => {
                 <p className="text-left">Certificate Guarantee</p>
               </div>
               <div className="card-actions flex justify-center mt-10">
-              <Link className="hover:text-green-400" to="/">
+              <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline   hover:bg-black font-medium">
                     Join Now
                   </button>
@@ -105,7 +105,7 @@ const ManagePlan = () => {
                 <p className="text-left">Certificate Guarantee</p>
               </div>
               <div className="card-actions flex justify-center mt-10">
-                <Link className="hover:text-green-400" to="/">
+                <Link to='classes' className="hover:text-green-400" >
                   <button className="btn btn-outline   hover:bg-black font-medium">
                     Join Now
                   </button>

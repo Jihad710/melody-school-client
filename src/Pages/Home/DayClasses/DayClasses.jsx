@@ -13,7 +13,7 @@ const DayClasses = () => {
           <br />
           come into play every day.
         </h2>
-       <Link to='/instructors'> <button className="relative border-2 text-2xl font-light border-gray-400 bg-transparent py-2.5 px-5 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100">
+       <Link to='classes'> <button className="relative border-2 text-2xl font-light border-gray-400 bg-transparent py-2.5 px-5 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-300 before:content-[''] hover:text-white before:hover:scale-x-100">
   Register Now 
 </button></Link>
 
@@ -33,7 +33,7 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-           <Link className="hover:text-green-400" to="/">
+           <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline mt-8  hover:bg-black font-medium">
                     More Details
                   </button>
@@ -53,7 +53,7 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-           <Link className="hover:text-green-400" to="/">
+           <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline  mt-8 hover:bg-black font-medium">
                     More Details
                   </button>
@@ -73,7 +73,7 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-           <Link className="hover:text-green-400" to="/">
+           <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline  mt-8 hover:bg-black font-medium">
                     More Details
                   </button>
@@ -93,7 +93,7 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-           <Link className="hover:text-green-400" to="/">
+           <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline mt-8  hover:bg-black font-medium">
                     More Details
                   </button>
@@ -113,7 +113,7 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-           <Link className="hover:text-green-400" to="/">
+           <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline mt-8  hover:bg-black font-medium">
                     More Details
                   </button>
@@ -133,7 +133,7 @@ const DayClasses = () => {
             accusamus?
           </p>
           <div className="card-actions mr-3">
-           <Link className="hover:text-green-400" to="/">
+           <Link className="hover:text-green-400" to="classes">
                   <button className="btn btn-outline mt-8  hover:bg-black font-medium">
                     More Details
                   </button>

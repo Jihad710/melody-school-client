@@ -10,7 +10,7 @@ const Description = () => {
             <div className="w-1/2 space-y-5 mb-10">
               <h2 className="text-3xl space-x-4 ">Music is everybody’s possession. It’s only publishers who think that people own it.</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nulla repellat odit obcaecati fuga voluptates harum iusto corporis facere ducimus!</p>
-              <Link
+              <Link to='classes'
               ><button className='btn btn-outline btn-warning mt-7'>Register Now </button></Link>
               
             </div>
