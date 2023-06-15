@@ -27,12 +27,13 @@ const handleLogOut = () => {
       <li>
         <Link to='/'>Home</Link>
       </li>
-      <li><Link to='/about'>About</Link></li>
+   
       
       <li><Link to='/instructors'>Instructors</Link></li>
       <li><Link to='/classes'>Classes</Link></li>
       
       <li><Link to="/dashboard/home">Dashboard </Link></li>
+      <li><Link to='/blog'>Blog</Link></li>
         
      
       

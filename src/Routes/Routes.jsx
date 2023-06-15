@@ -21,6 +21,7 @@ import EnrolledClasses from "../Pages/DashBoard/EnrolledClasses/EnrolledClasses"
 import AdminRoute from "./AdminRoute";
 import Payment from "../Pages/Payment/Payment";
 import CheckOutForm from "../Pages/CheckOutForm/CheckOutForm";
+import Blog from "../Pages/Blog/Blog";
 
 
 
@@ -53,6 +54,11 @@ export const router = createBrowserRouter([
             {
                 path : 'classes',
                 element: <Classes></Classes>
+                
+            },
+            {
+                path : 'blog',
+                element: <Blog></Blog>
                 
             }
         ],
