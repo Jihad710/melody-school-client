@@ -24,8 +24,8 @@ const Banner = () => {
             </div>
           </div>
           
-          <a href="#slide1" className="btn btn-circle bg-transparent text-white absolute top-1/2 left-5 transform -translate-y-1/2 z-10">❮</a>
-      <a href="#slide2" className="btn btn-circle bg-transparent text-white absolute top-1/2 right-5 transform -translate-y-1/2 z-10">❯</a>
+          <a href="#slide1" className=" text-white absolute top-1/2 left-5 transform -translate-y-1/2 z-10">❮</a>
+      <a href="#slide2" className=" text-white absolute top-1/2 right-5 transform -translate-y-1/2 z-10">❯</a>
           
         </div> 
         <div id="slide2" className="carousel-item relative w-full">
@@ -33,8 +33,8 @@ const Banner = () => {
           <div className="absolute h-full flex items-center rounded-xl left-0 top-0 bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0] ">
            
           </div>
-          <a href="#slide1" className="btn btn-circle bg-transparent text-white absolute top-1/2 left-5 transform -translate-y-1/2 z-10">❮</a>
-      <a href="#slide" className="btn btn-circle bg-transparent text-white absolute top-1/2 right-5 transform -translate-y-1/2 z-10">❯</a>
+          <a href="#slide1" className=" text-white absolute top-1/2 left-5 transform -translate-y-1/2 z-10">❮</a>
+      <a href="#slide" className=" text-white absolute top-1/2 right-5 transform -translate-y-1/2 z-10">❯</a>
         </div> 
          
         
