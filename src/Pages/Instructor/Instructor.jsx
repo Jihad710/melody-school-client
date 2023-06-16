@@ -18,7 +18,7 @@ const InstructorsMentor = () => {
 
   const InstructorDetails = async (email) => {
     setIsCollapseLoading(true);
-    const res = await axios.get(`http://localhost:5000/classes/${email}`);
+    const res = await axios.get(`https://melody-school-server-jihad710.vercel.app/classes/${email}`);
     console.log(res.data);
     setClassesInfo(res.data);
     setIsCollapseLoading(false);

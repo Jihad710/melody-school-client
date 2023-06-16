@@ -20,7 +20,7 @@ const Classes = () => {
   const { data: classes = [], refetch } = useQuery({
     queryKey: ['classes'],
     queryFn: async () => {
-      const res = await axios(`http://localhost:5000/approveClasses`)
+      const res = await axios(`https://melody-school-server-jihad710.vercel.app/approveClasses`)
       return res.data;
     }
   })
@@ -47,7 +47,7 @@ const Classes = () => {
         instructorName : item.InstructorName 
       }
       console.log(selectClass)
-      axios.post('http://localhost:5000/selectClass', selectClass)
+      axios.post('https://melody-school-server-jihad710.vercel.app/selectClass', selectClass)
       .then(res=>{
         if(res.data.insertedId){
           refetch()

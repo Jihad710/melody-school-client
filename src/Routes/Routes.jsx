@@ -73,10 +73,7 @@ export const router = createBrowserRouter([
                 path: 'home',
                 element:<UserHome></UserHome>
               },
-            // {
-            //     path:'userhome',
-            //     element:<StudentRoute><UserHome></UserHome></StudentRoute>
-            //   },
+            
             {
                 path:'manageusers',
                 element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>

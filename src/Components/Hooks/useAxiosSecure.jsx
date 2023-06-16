@@ -7,7 +7,7 @@ import useAuth from './useAuth';
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://melody-school-server-jihad710.vercel.app',
   });
 
 const useAxiosSecure = () => {
