@@ -3,10 +3,14 @@ import vocal from "../../../assets/Banner/Vocal.png";
 import sexophone from "../../../assets/Banner/Saxophone.png";
 import guitar from "../../../assets/Banner/guitar.png";
 import drum from "../../../assets/Banner/Drum.png";
+import ScrollToTop from "react-scroll-to-top";
 
 const DayClasses = () => {
+ 
   return (
+    
     <section>
+       <ScrollToTop smooth />
       <div className="text-4xl  font-semibold mb-16 mt-20 flex justify-between items-center">
         <h2>
           Our class is where your passions

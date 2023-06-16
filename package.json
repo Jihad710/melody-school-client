@@ -38,6 +38,7 @@
     "react-query": "^3.39.3",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.12.0",
+    "react-scroll-to-top": "^3.0.0",
     "react-simple-captcha": "^9.0.2",
     "react-tabs": "^6.0.1",
     "react-theme-provider": "^0.1.3",
